@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { BookState } from '../../_store/book.reducer';
 import * as bookActions from '../../_store/book.actions';
 
@@ -12,6 +12,8 @@ import * as bookActions from '../../_store/book.actions';
 })
 export class BookEditorComponent implements OnInit {
 
+  @ViewChild('f') fgForm: NgForm | any;
+  
   public formGroup: any = FormGroup;
 
   constructor(
@@ -34,6 +36,7 @@ export class BookEditorComponent implements OnInit {
     }
 
     this._store.dispatch(bookActions.addBook({data: payload}));
+    this.fgForm.resetForm();
   }
 
 }

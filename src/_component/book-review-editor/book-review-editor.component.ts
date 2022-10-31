@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { addReview } from '../../_store/book.actions';
 import { BookState } from '../../_store/book.reducer';
+
 
 @Component({
   selector: 'lib-book-review-editor',
@@ -11,6 +12,7 @@ import { BookState } from '../../_store/book.reducer';
 })
 export class BookReviewEditorComponent implements OnInit {
 
+  @ViewChild('f') fgForm: NgForm | any;
   @Input('book') book: any;
 
   public formGroup: any = FormGroup;
@@ -29,6 +31,7 @@ export class BookReviewEditorComponent implements OnInit {
 
   onSubmit(): void {
     this._store.dispatch(addReview({bookId: this.book.data.id, data: this.formGroup.value}));
+    this.fgForm.resetForm();
   }
 
 }

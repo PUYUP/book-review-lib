@@ -4,7 +4,7 @@
 	</mat-card-header>
 
 	<mat-card-content class="px-3 pb-3">
-		<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+		<form [formGroup]="formGroup" (ngSubmit)="onSubmit()" #f="ngForm">
 			<mat-form-field appearance="outline" class="w-100">
 				<mat-label>Name</mat-label>
 				<input matInput formControlName="name">
