@@ -1,0 +1,15 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+	<mat-form-field appearance="outline" class="w-100">
+		<mat-label>Email</mat-label>
+		<input type="email" matInput formControlName="email" placeholder="me@gmail.com">
+	</mat-form-field>
+
+	<mat-form-field appearance="outline" class="w-100">
+		<mat-label>Note</mat-label>
+		<textarea [cdkTextareaAutosize]="true" matInput formControlName="note" placeholder="Very good!"></textarea>
+	</mat-form-field>
+
+	<button type="submit" mat-raised-button color="primary" [disabled]="formGroup.invalid" class="px-4">
+		Send
+	</button>
+</form>

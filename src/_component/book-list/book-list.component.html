@@ -1,0 +1,23 @@
+<ng-container *ngIf="bookList$ | async as bookList">
+	<mat-card>
+		<mat-card-header class="py-3">
+			<mat-card-title>Books</mat-card-title>
+		</mat-card-header>
+
+		<mat-card-content class="px-3">
+			<ng-container *ngIf="bookList.data.length > 0">
+				<div class="row">
+					<ng-container *ngFor="let book of bookList.data">
+						<div class="col-4 col-md-3 mb-4">
+							<lib-book-item [book]="book"></lib-book-item>
+						</div>
+					</ng-container>
+				</div>
+			</ng-container>
+
+			<ng-container *ngIf="bookList.data.length <= 0">
+				<div class="mb-3">Please add new book.</div>
+			</ng-container>
+		</mat-card-content>
+	</mat-card>
+</ng-container>

@@ -1,0 +1,24 @@
+<ng-container *ngIf="book$ | async as book">
+	<mat-card>
+		<mat-card-header class="py-3">
+			<mat-card-title>{{ book.data.name ? book.data.name + ' ' : '' }}Review</mat-card-title>
+		</mat-card-header>
+
+		<mat-card-content class="px-3">
+			<ng-container *ngIf="book.data?.name">
+				<div class="row">
+					<div class="col-6">
+						<lib-book-review-list [book]="book"></lib-book-review-list>
+					</div>
+					<div class="col-6 pb-3">
+						<lib-book-review-editor [book]="book"></lib-book-review-editor>
+					</div>
+				</div>
+			</ng-container>
+
+			<ng-container *ngIf="!book.data?.name">
+				<div class="mb-3">Please select a book.</div>
+			</ng-container>
+		</mat-card-content>
+	</mat-card>
+</ng-container>

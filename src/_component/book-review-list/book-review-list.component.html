@@ -1,0 +1,11 @@
+<ng-container *ngIf="book.data.reviews.length > 0">
+	<ul class="list-unstyled">
+		<ng-container *ngFor="let review of book.data.reviews">
+			<li><lib-book-review-item [review]="review"></lib-book-review-item></li>
+		</ng-container>
+	</ul>
+</ng-container>
+
+<ng-container *ngIf="book.data.reviews.length <= 0">
+	<div>No review yet</div>
+</ng-container>

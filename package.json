@@ -1,0 +1,17 @@
+{
+  "name": "book-review-lib",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^14.2.0",
+    "@angular/core": "^14.2.0",
+    "@angular/material": "^14.2.6",
+    "@ngrx/store": "^14.3.2",
+    "bootstrap": "^5.2.2"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@ngrx/schematics": "^14.3.2"
+  }
+}
