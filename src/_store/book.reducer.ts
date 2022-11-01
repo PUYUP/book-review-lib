@@ -28,7 +28,37 @@ export const initialState: BookState = {
     status: 'idle',
   },
   list: {
-    data: [],
+    data: [
+      {
+        "id": "1",
+        "name": "Harry Potter",
+        "year": 2010,
+        "reviews": [
+          {
+            "email": "john.doe@gmail.com",
+            "note": "Great book to read",
+            "star": 5
+          },
+          {
+            "email": "jane.doe@gmail.com",
+            "note": "Mediocre book to read",
+            "star": 3
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "name": "The Hunger Games",
+        "year": 2012,
+        "reviews": [
+          {
+            "email": "john.doe@gmail.com",
+            "note": "Amazing book to read",
+            "star": 4
+          }
+        ]
+      }
+    ],
     error: undefined,
     status: 'idle',
   },
@@ -100,6 +130,13 @@ export const reducer = createReducer(
           ]
         }
       }
+    }
+  }),
+
+  on(bookActions.getBooks, (state) => {
+    return {
+      ...state,
+      list: state.list
     }
   })
 );

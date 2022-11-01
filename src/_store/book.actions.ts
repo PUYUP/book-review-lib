@@ -49,3 +49,19 @@ export const addReviewFailure = createAction(
   '[Book] Add Review Failure',
   props<{ error: any }>()
 );
+
+
+// GET ALL BOOK
+export const getBooks = createAction(
+  '[Book] Get Books'
+);
+
+export const getBooksSuccess = createAction(
+  '[Book] Get Books Success',
+  props<{ data: any }>()
+);
+
+export const getBooksBookFailure = createAction(
+  '[Book] Get Books Failure',
+  props<{ error: any }>()
+);

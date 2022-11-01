@@ -6,6 +6,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+
+import { StarRatingModule } from 'angular-star-rating';
 
 import { BookReviewLibComponent } from './book-review-lib.component';
 import { BookEditorComponent } from '../_component/book-editor/book-editor.component';
@@ -33,10 +36,13 @@ import { BookReviewEditorComponent } from '../_component/book-review-editor/book
     FormsModule,
     ReactiveFormsModule,
 
+    StarRatingModule.forRoot(),
+
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
+    MatSelectModule,
   ],
   exports: [
     BookReviewLibComponent,

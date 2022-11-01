@@ -21,4 +21,19 @@
 			</ng-container>
 		</mat-card-content>
 	</mat-card>
+
+	<ng-container *ngIf="books$ | async as books">
+		<ng-container *ngIf="books.data.length > 0">
+			<br />
+
+			<mat-card>
+				<mat-card-content>
+					<div class="w-100 text-center">
+						<button mat-raised-button color="accent" (click)="exportJSON(books.data)">Export JSON</button>
+						<a #download [href]="sanitizedBlobUrl" [download]="filename" type="button" class="d-none">Download</a>
+					</div>
+				</mat-card-content>
+			</mat-card>
+		</ng-container>
+	</ng-container>
 </ng-container>

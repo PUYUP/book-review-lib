@@ -26,6 +26,7 @@ export class BookReviewEditorComponent implements OnInit {
     this.formGroup = this._fb.group({
       'email': ['', [Validators.required, Validators.email]],
       'note': ['', [Validators.required, Validators.minLength(5)]],
+      'star': ['', [Validators.required]],
     })
   }
 
